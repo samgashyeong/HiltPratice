@@ -1,6 +1,8 @@
 package com.example.myapplication
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,8 +22,14 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var myname: Myname
+
+    @Inject
+    lateinit var car : Car
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Log.e(TAG, "onCreate: ${car.engine}")
+
         setContent {
             MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
